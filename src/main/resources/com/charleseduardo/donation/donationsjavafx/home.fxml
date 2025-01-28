@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="home" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.charleseduardo.donation.donationsjavafx.controllers.HomeController">
+    <Button fx:id="logoutButton" layoutX="515.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleLogoutButton" prefHeight="40.0" prefWidth="71.0" styleClass="buttonRed" text="Sair" />
+      <TableView fx:id="donationsTable" layoutX="200.0" layoutY="50.0" prefHeight="200.0" prefWidth="200.0" styleClass="tableHome">
+        <columns>
+          <TableColumn id="userColumn" fx:id="userColumn" prefWidth="102.0" text="Nome" />
+          <TableColumn id="amountColumn" fx:id="amountColumn" prefWidth="97.0" text="Valor doado" />
+        </columns>
+      </TableView>
+      <Button fx:id="donateButton" layoutX="214.0" layoutY="323.0" mnemonicParsing="false" onAction="#handleDonateButton" text="Fazer uma doação" />
+</AnchorPane>
