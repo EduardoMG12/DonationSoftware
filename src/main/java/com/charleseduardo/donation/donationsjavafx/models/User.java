@@ -60,12 +60,10 @@ public class User {
 
     public User() {}
 
-    public User(int id, String fullName, int yearsOld, String email, String password, LocalDateTime createdAt) {
+    public User(int id, String fullName, String email, String password) {
         this.id = id;
         this.fullName = fullName;
-        this.yearsOld = yearsOld;
         this.email = email;
         this.password = password;
-        this.createdAt = createdAt;
     }
 }
