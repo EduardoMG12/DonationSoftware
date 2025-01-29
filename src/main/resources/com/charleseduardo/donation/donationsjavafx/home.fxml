@@ -5,11 +5,6 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="1024.0" styleClass="home" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.charleseduardo.donation.donationsjavafx.controllers.HomeController">
     <Button fx:id="logoutButton" layoutX="515.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleLogoutButton" prefHeight="40.0" prefWidth="71.0" styleClass="buttonRed" text="Sair" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
-   <HBox alignment="BOTTOM_CENTER" layoutX="3.0" layoutY="500.0" prefHeight="100.0" prefWidth="200.0" styleClass="VBoxCentralizeWrapper" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="500.0">
-      <children>
-            <Button fx:id="donateButton" mnemonicParsing="false" onAction="#handleDonateButton" styleClass="VBoxCentralizeWrapper" text="Fazer uma doação" />
-      </children>
-   </HBox>
    <VBox alignment="CENTER" prefHeight="600.0" prefWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
          <HBox alignment="CENTER" prefHeight="311.0" prefWidth="1024.0" styleClass="VBoxCentralizeWrapper">
@@ -24,4 +19,9 @@
          </HBox>
       </children>
    </VBox>
+   <HBox alignment="BOTTOM_CENTER" layoutX="3.0" layoutY="500.0" prefHeight="100.0" prefWidth="200.0" styleClass="VBoxCentralizeWrapper" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="500.0">
+      <children>
+            <Button fx:id="donateButton" mnemonicParsing="false" onAction="#handleDonateButton" styleClass="VBoxCentralizeWrapper" text="Fazer uma doação" />
+      </children>
+   </HBox>
 </AnchorPane>
