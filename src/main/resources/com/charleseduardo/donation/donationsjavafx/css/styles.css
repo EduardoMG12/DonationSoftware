@@ -1,3 +1,10 @@
+
+.VBoxCentralizeWrapper{
+     -fx-alignment: center;
+     -fx-width: 100%;
+     -fx-height: 50%;
+}
+
 .button {
     -fx-text-fill: white;
     -fx-font-size: 16px;
@@ -29,9 +36,9 @@
 }
 
 .home {
--fx-background-image: url("../imgs/backgroundHome.png");
--fx-background-size: cover;
--fx-background-repeat: no-repeat;
+    -fx-background-image: url("../imgs/backgroundHome.png");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
 }
 
 .tableHome {

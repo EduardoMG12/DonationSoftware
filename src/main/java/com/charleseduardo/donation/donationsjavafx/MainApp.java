@@ -19,7 +19,8 @@ public class MainApp extends Application {
 
         primaryStage.setScene(scene);
         primaryStage.setTitle("Donation Program - Home");
-        primaryStage.setResizable(false);
+        primaryStage.setResizable(true);
+        primaryStage.setMaximized(true);
         primaryStage.show();
     }
 
