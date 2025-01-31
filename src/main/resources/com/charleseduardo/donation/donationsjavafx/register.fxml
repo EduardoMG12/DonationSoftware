@@ -5,9 +5,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="447.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.charleseduardo.donation.donationsjavafx.controllers.RegisterController">
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.charleseduardo.donation.donationsjavafx.controllers.RegisterController">
    <children>
-      <AnchorPane prefHeight="82.0" prefWidth="520.0" style="-fx-background-color: #5CB338;">
+      <AnchorPane prefHeight="82.0" prefWidth="1920.0" style="-fx-background-color: #5CB338;">
          <children>
             <ImageView fitHeight="52.0" fitWidth="79.0" layoutX="27.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -20,39 +20,39 @@
             </Label>
          </children>
       </AnchorPane>
-      <Label layoutX="92.0" layoutY="89.0" text="FullName">
+      <Label layoutX="792.0" layoutY="241.0" text="FullName">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
-      <TextField fx:id="nameField" layoutX="92.0" layoutY="114.0" prefHeight="25.0" prefWidth="336.0" />
-      <Label layoutX="92.0" layoutY="155.0" text="E-mail">
+      <TextField fx:id="nameRegisterField" layoutX="792.0" layoutY="266.0" prefHeight="25.0" prefWidth="336.0" />
+      <Label layoutX="792.0" layoutY="307.0" text="E-mail">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
-      <TextField fx:id="emailField" layoutX="92.0" layoutY="180.0" prefHeight="25.0" prefWidth="336.0" />
-      <Label layoutX="92.0" layoutY="218.0" prefHeight="19.0" prefWidth="55.0" text="Password">
+      <TextField fx:id="emailRegisterField" layoutX="792.0" layoutY="332.0" prefHeight="25.0" prefWidth="336.0" />
+      <Label layoutX="792.0" layoutY="370.0" prefHeight="19.0" prefWidth="55.0" text="Password">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
-      <Label layoutX="92.0" layoutY="282.0" text="Repeat-password">
+      <PasswordField fx:id="passwordRegisterField" layoutX="792.0" layoutY="395.0" prefHeight="25.0" prefWidth="336.0" />
+      <Label layoutX="792.0" layoutY="434.0" text="Repeat-password">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
-      <Button fx:id="registerButton" layoutX="345.0" layoutY="358.0" mnemonicParsing="false" style="-fx-background-color: #5CB338; -fx-font-weight: bold;" text="Register" textAlignment="CENTER" textFill="WHITE">
+      <PasswordField fx:id="repeatPasswordRegisterField" layoutX="792.0" layoutY="459.0" prefHeight="25.0" prefWidth="336.0" />
+      <Button fx:id="handleRegisterButton" layoutX="1045.0" layoutY="510.0" mnemonicParsing="false" onAction="#handleRegister" style="-fx-background-color: #5CB338; -fx-font-weight: bold;" text="Register" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="loginButton" layoutX="102.0" layoutY="358.0" mnemonicParsing="false" style="-fx-background-color: #5CB338; -fx-font-weight: bold;" text="I have an acount" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="loginButton" layoutX="802.0" layoutY="510.0" mnemonicParsing="false" style="-fx-background-color: #5CB338; -fx-font-weight: bold;" text="I have an acount" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <PasswordField fx:id="passwordField" layoutX="92.0" layoutY="243.0" prefHeight="25.0" prefWidth="336.0" />
-      <PasswordField fx:id="repeatPasswordField" layoutX="92.0" layoutY="307.0" prefHeight="25.0" prefWidth="336.0" />
    </children>
 </AnchorPane>

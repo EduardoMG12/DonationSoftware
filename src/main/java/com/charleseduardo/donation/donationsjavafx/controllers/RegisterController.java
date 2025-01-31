@@ -1,9 +1,13 @@
 package com.charleseduardo.donation.donationsjavafx.controllers;
 
+import com.charleseduardo.donation.donationsjavafx.dao.DatabaseConnection;
+import com.charleseduardo.donation.donationsjavafx.dao.UserDAO;
 import com.charleseduardo.donation.donationsjavafx.models.User;
 import com.charleseduardo.donation.donationsjavafx.services.UserService;
+import com.charleseduardo.donation.donationsjavafx.utils.ToolBox;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
@@ -12,34 +16,40 @@ import java.sql.SQLException;
 public class RegisterController {
 
     @FXML
-    private TextField nameField;
+    private TextField nameRegisterField;
     @FXML
-    private TextField emailField;
+    private TextField emailRegisterField;
     @FXML
-    private PasswordField passwordField;
+    private PasswordField passwordRegisterField;
     @FXML
-    private PasswordField repeatPasswordField;
+    private PasswordField repeatPasswordRegisterField;
+
+    @FXML
+    private Button handleRegisterButton;
 
     private UserService userService;
 
-//    public RegisterController() {
-//        this.userService = new UserService();
-//    }
+    private ToolBox toolBox = new ToolBox();
+
+    public RegisterController() {
+        UserDAO userDAO = new UserDAO(DatabaseConnection.getConnection());
+        this.userService = new UserService(userDAO);
+    }
 
     @FXML
     private void handleRegister() {
-        String fullName = nameField.getText();
-        String email = emailField.getText();
-        String password = passwordField.getText();
-        String repeatPassword = repeatPasswordField.getText();
+        String fullName = nameRegisterField.getText();
+        String email = emailRegisterField.getText();
+        String password = passwordRegisterField.getText();
+        String repeatPassword = repeatPasswordRegisterField.getText();
 
         if (fullName.isEmpty() || email.isEmpty() || password.isEmpty() || repeatPassword.isEmpty()) {
-            showAlert("Erro", "Todos os campos são obrigatórios!", Alert.AlertType.ERROR);
+            toolBox.showAlert("Error", "All fields is required!", Alert.AlertType.ERROR);
             return;
         }
 
         if (!password.equals(repeatPassword)) {
-            showAlert("Erro", "As senhas não coincidem!", Alert.AlertType.ERROR);
+            toolBox.showAlert("Error", "The passwords are not the same!", Alert.AlertType.ERROR);
             return;
         }
 
@@ -50,18 +60,11 @@ public class RegisterController {
 
         try {
             userService.addUser(newUser);
-            showAlert("Sucesso", "Usuário registrado com sucesso!", Alert.AlertType.INFORMATION);
+            toolBox.showAlert("Sucess", "The user has been registered, you will be directed to the login page!", Alert.AlertType.INFORMATION);
         } catch (SQLException e) {
-            showAlert("Erro", "Falha ao registrar o usuário!", Alert.AlertType.ERROR);
+            toolBox.showAlert("Error", "Fail registrer user!", Alert.AlertType.ERROR);
             e.printStackTrace();
         }
     }
 
-    private void showAlert(String title, String message, Alert.AlertType alertType) {
-        Alert alert = new Alert(alertType);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
-    }
 }
