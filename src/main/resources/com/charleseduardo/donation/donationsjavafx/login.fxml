@@ -5,9 +5,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="447.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.charleseduardo.donation.donationsjavafx.controllers.RegisterController">
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.charleseduardo.donation.donationsjavafx.controllers.LoginController">
    <children>
-      <AnchorPane prefHeight="82.0" prefWidth="520.0" style="-fx-background-color: #5CB338;">
+      <AnchorPane prefHeight="82.0" prefWidth="1920.0" style="-fx-background-color: #5CB338;">
          <children>
             <ImageView fitHeight="52.0" fitWidth="79.0" layoutX="27.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -20,24 +20,24 @@
             </Label>
          </children>
       </AnchorPane>
-      <Label layoutX="92.0" layoutY="124.0" text="E-mail or Full-name">
+      <Label layoutX="792.0" layoutY="362.0" text="E-mail ">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
-      <TextField fx:id="nameField" layoutX="92.0" layoutY="149.0" prefHeight="25.0" prefWidth="336.0" />
-      <Label layoutX="92.0" layoutY="190.0" text="Password">
+      <TextField fx:id="emailLoginField" layoutX="792.0" layoutY="387.0" prefHeight="25.0" prefWidth="336.0" />
+      <Label layoutX="792.0" layoutY="428.0" text="Password">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
-      <TextField fx:id="emailField" layoutX="92.0" layoutY="215.0" prefHeight="25.0" prefWidth="336.0" />
-      <Button fx:id="registerButton" layoutX="359.0" layoutY="272.0" mnemonicParsing="false" style="-fx-background-color: #5CB338; -fx-font-weight: bold;" text="Login" textAlignment="CENTER" textFill="WHITE">
+      <PasswordField fx:id="passwordLoginField" layoutX="792.0" layoutY="453.0" prefHeight="25.0" prefWidth="336.0" />
+      <Button fx:id="loginButton" layoutX="1059.0" layoutY="510.0" mnemonicParsing="false" onAction="#handleLogin" style="-fx-background-color: #5CB338; -fx-font-weight: bold;" text="Login" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="loginButton" layoutX="107.0" layoutY="272.0" mnemonicParsing="false" style="-fx-background-color: #5CB338; -fx-font-weight: bold;" text="I haven't an acount" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="loginButton" layoutX="807.0" layoutY="510.0" mnemonicParsing="false" style="-fx-background-color: #5CB338; -fx-font-weight: bold;" text="I haven't an acount" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
