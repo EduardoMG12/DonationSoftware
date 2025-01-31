@@ -8,8 +8,17 @@ public class DatabaseConnection {
     private static final String URL = "jdbc:mysql://localhost:3306/DB_donation_tracker";
     private static final String USER = "user";
     private static final String PASSWORD = "password";
+    private static Connection cachedConnection;
 
-    public static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(URL, USER, PASSWORD);
+    public static Connection getConnection() {
+        try{
+            if(cachedConnection == null){
+                cachedConnection = DriverManager.getConnection(URL, USER, PASSWORD);
+            }
+            return cachedConnection;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

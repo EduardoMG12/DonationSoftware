@@ -78,4 +78,26 @@ public class UserDAO {
         }
     }
 
+    public User findByEmail(String emailOrName) {
+        String query = "SELECT * FROM users WHERE email = ? OR full_name = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(query)) {
+            stmt.setString(1, emailOrName);
+            stmt.setString(2, emailOrName);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                User user = new User();
+                user.setId(rs.getInt("id"));
+                user.setFullName(rs.getString("full_name"));
+                user.setEmail(rs.getString("email"));
+                user.setPassword(rs.getString("password"));
+                return user;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
 }

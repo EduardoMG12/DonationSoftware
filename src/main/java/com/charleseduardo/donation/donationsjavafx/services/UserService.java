@@ -13,19 +13,27 @@ public class UserService {
         this.userDAO = userDAO;
     }
 
+    public User getUserByEmail(String email) throws SQLException {
+        if (email == null || email.isEmpty()) {
+            throw new IllegalArgumentException("The email field is required.");
+        }
+        return userDAO.findByEmail(email);
+    }
+
+
     public List<User> getAllUsers() throws SQLException {
         return userDAO.getAllUsers();
     }
 
     public void addUser(User user) throws SQLException {
         if (user.getFullName() == null || user.getFullName().isEmpty()) {
-            throw new IllegalArgumentException("O nome completo é obrigatório.");
+            throw new IllegalArgumentException("the fullname field is required.");
         }
         if (user.getEmail() == null || user.getEmail().isEmpty()) {
-            throw new IllegalArgumentException("O email é obrigatório.");
+            throw new IllegalArgumentException("The email field is required.");
         }
         if (user.getPassword() == null || user.getPassword().length() < 6) {
-            throw new IllegalArgumentException("A senha deve ter pelo menos 6 caracteres.");
+            throw new IllegalArgumentException("The password must be at least 6 characters long.");
         }
         userDAO.addUser(user);
     }
@@ -36,14 +44,14 @@ public class UserService {
 
     public void updateUser(User user) throws SQLException {
         if (user.getId() <= 0) {
-            throw new IllegalArgumentException("ID do usuário inválido.");
+            throw new IllegalArgumentException("User id not found.");
         }
         userDAO.updateUser(user);
     }
 
     public void deleteUser(int id) throws SQLException {
         if (id <= 0) {
-            throw new IllegalArgumentException("ID inválido.");
+            throw new IllegalArgumentException("Invalid id.");
         }
         userDAO.deleteUser(id);
     }
