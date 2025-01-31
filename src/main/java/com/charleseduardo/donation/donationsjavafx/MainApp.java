@@ -1,19 +1,27 @@
 package com.charleseduardo.donation.donationsjavafx;
 
+import com.charleseduardo.donation.donationsjavafx.controllers.RegisterController;
+import com.charleseduardo.donation.donationsjavafx.dao.DatabaseConnection;
+import com.charleseduardo.donation.donationsjavafx.dao.UserDAO;
+import com.charleseduardo.donation.donationsjavafx.services.UserService;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-import java.io.File;
 import java.io.IOException;
-import java.net.URL;
+
+import java.sql.Connection;
+
 
 public class MainApp extends Application {
 
     public void start(Stage primaryStage) throws IOException {
-        AnchorPane loader = FXMLLoader.load(MainApp.class.getResource("register.fxml"));
+
+
+        AnchorPane loader = FXMLLoader.load(MainApp.class.getResource("login.fxml"));
+
         Scene scene = new Scene(loader);
 
         primaryStage.setScene(scene);
