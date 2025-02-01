@@ -49,7 +49,7 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="loginButton" layoutX="802.0" layoutY="510.0" mnemonicParsing="false" style="-fx-background-color: #5CB338; -fx-font-weight: bold;" text="I have an acount" textAlignment="CENTER" textFill="WHITE">
+      <Button layoutX="802.0" layoutY="510.0" mnemonicParsing="false" onAction="#handleLoginRedirect" style="-fx-background-color: #5CB338; -fx-font-weight: bold;" text="I have an acount" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>

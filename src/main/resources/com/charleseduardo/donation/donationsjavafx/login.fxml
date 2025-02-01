@@ -37,7 +37,7 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="loginButton" layoutX="807.0" layoutY="510.0" mnemonicParsing="false" style="-fx-background-color: #5CB338; -fx-font-weight: bold;" text="I haven't an acount" textAlignment="CENTER" textFill="WHITE">
+      <Button layoutX="807.0" layoutY="510.0" mnemonicParsing="false" onAction="#handleRegisterRedirect" style="-fx-background-color: #5CB338; -fx-font-weight: bold;" text="I haven't an acount" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>

@@ -35,12 +35,6 @@
     -fx-padding: 8 18;
 }
 
-.home {
-    -fx-background-image: url("../imgs/backgroundHome.png");
-    -fx-background-size: cover;
-    -fx-background-repeat: no-repeat;
-}
-
 .tableHome {
     -fx-opacity: 0.8;
 }
