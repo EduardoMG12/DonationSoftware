@@ -35,6 +35,9 @@ public class UserService {
         if (user.getPassword() == null || user.getPassword().length() < 6) {
             throw new IllegalArgumentException("The password must be at least 6 characters long.");
         }
+        if (userDAO.emailExists(user.getEmail())) {
+            throw new SQLException("Email already exists!");
+        }
         userDAO.addUser(user);
     }
 
