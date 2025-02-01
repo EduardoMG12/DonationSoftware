@@ -4,6 +4,7 @@ import com.charleseduardo.donation.donationsjavafx.dao.DatabaseConnection;
 import com.charleseduardo.donation.donationsjavafx.dao.UserDAO;
 import com.charleseduardo.donation.donationsjavafx.models.User;
 import com.charleseduardo.donation.donationsjavafx.services.UserService;
+import com.charleseduardo.donation.donationsjavafx.utils.ScreenManager;
 import com.charleseduardo.donation.donationsjavafx.utils.ToolBox;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -44,8 +45,14 @@ public class LoginController {
 
         if (user != null && user.getPassword().equals(password)) {
             toolBox.showAlert("Success", "Login successful! Redirecting...", Alert.AlertType.INFORMATION);
+            ScreenManager.redirectTo("home.fxml");
         } else {
             toolBox.showAlert("Error", "Invalid credentials! Please try again.", Alert.AlertType.ERROR);
         }
+    }
+
+    @FXML
+    private void handleRegisterRedirect() {
+        ScreenManager.redirectTo("register.fxml");
     }
 }

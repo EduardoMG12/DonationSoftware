@@ -1,5 +1,6 @@
 package com.charleseduardo.donation.donationsjavafx.controllers;
 
+import com.charleseduardo.donation.donationsjavafx.utils.ScreenManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -24,19 +25,19 @@ public class HomeController {
 
     @FXML
     public void initialize() {
-        System.out.println("Tela Home carregada com sucesso!");
+        System.out.println("Succes loading home screen!");
 
-        userColumn.setText("Usuário");
-        amountColumn.setText("Valor Doado");
+        userColumn.setText("User");
+        amountColumn.setText("Donate value");
     }
 
     @FXML
     private void handleDonateButton() {
-        System.out.println("Botão Fazer Doação clicado!");
+        ScreenManager.redirectTo("donation.fxml");
     }
 
     @FXML
     private void handleLogoutButton() {
-        System.out.println("Botão Deslogar clicado!");
+        ScreenManager.redirectTo("login.fxml");
     }
 }
