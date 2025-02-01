@@ -4,6 +4,7 @@ import com.charleseduardo.donation.donationsjavafx.dao.DatabaseConnection;
 import com.charleseduardo.donation.donationsjavafx.dao.UserDAO;
 import com.charleseduardo.donation.donationsjavafx.models.User;
 import com.charleseduardo.donation.donationsjavafx.services.UserService;
+import com.charleseduardo.donation.donationsjavafx.utils.ScreenManager;
 import com.charleseduardo.donation.donationsjavafx.utils.ToolBox;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -37,6 +38,11 @@ public class RegisterController {
     }
 
     @FXML
+    private void handleLoginRedirect() {
+        ScreenManager.redirectTo("login.fxml"); // Chama a troca de tela
+    }
+
+    @FXML
     private void handleRegister() {
         String fullName = nameRegisterField.getText();
         String email = emailRegisterField.getText();
@@ -60,10 +66,15 @@ public class RegisterController {
 
         try {
             userService.addUser(newUser);
-            toolBox.showAlert("Sucess", "The user has been registered, you will be directed to the login page!", Alert.AlertType.INFORMATION);
+            toolBox.showAlert("Success", "User registered successfully! Redirecting to login.", Alert.AlertType.INFORMATION);
+            handleLoginRedirect();
         } catch (SQLException e) {
-            toolBox.showAlert("Error", "Fail registrer user!", Alert.AlertType.ERROR);
-            e.printStackTrace();
+            if (e.getMessage().contains("Email already exists!")) {
+                toolBox.showAlert("Error", "This email is already registered!", Alert.AlertType.ERROR);
+            } else {
+                toolBox.showAlert("Error", "Failed to register user!", Alert.AlertType.ERROR);
+                e.printStackTrace();
+            }
         }
     }
 
