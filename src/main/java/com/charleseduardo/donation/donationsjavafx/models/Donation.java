@@ -9,6 +9,10 @@ public class Donation {
     private int paymentMethodId;
     private LocalDateTime donationDate;
 
+    public Donation() {
+
+    }
+
     public int getId() {
         return id;
     }

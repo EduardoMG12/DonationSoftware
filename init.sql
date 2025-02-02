@@ -26,11 +26,13 @@ CREATE TABLE donations(
     FOREIGN KEY (payment_method_id) REFERENCES payment_methods(id)
 );
 
-INSERT INTO payment_methods (name) VALUES ("Cartão de Crédito");
+INSERT INTO payment_methods (name) VALUES ("Credit Card");
 INSERT INTO payment_methods (name) VALUES ("Boleto");
-INSERT INTO payment_methods (name) VALUES ("MercadoPago");
+INSERT INTO payment_methods (name) VALUES ("Fetlock");
 INSERT INTO payment_methods (name) VALUES ("Paypal");
-INSERT INTO payment_methods (name) VALUES ("Transferência Bancária");
+INSERT INTO payment_methods (name) VALUES ("Bank Transfer");
+INSERT INTO payment_methods (name) VALUES ("PIX");
+
 
 INSERT INTO users (full_Name, email, password) VALUES ("João", "joao@example.com", "password123");
 INSERT INTO users (full_Name, email, password) VALUES ("Charles", "charles@example.com", "password123");

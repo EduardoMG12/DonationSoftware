@@ -1,9 +1,13 @@
 package com.charleseduardo.donation.donationsjavafx.services;
 
+import com.charleseduardo.donation.donationsjavafx.dao.DatabaseConnection;
+import com.charleseduardo.donation.donationsjavafx.dao.PaymentMethodDAO;
 import com.charleseduardo.donation.donationsjavafx.dao.UserDAO;
+import com.charleseduardo.donation.donationsjavafx.models.Donation;
 import com.charleseduardo.donation.donationsjavafx.models.User;
 
 import java.sql.SQLException;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class UserService {
