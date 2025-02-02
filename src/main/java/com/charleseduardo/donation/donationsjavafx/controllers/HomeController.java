@@ -1,6 +1,7 @@
 package com.charleseduardo.donation.donationsjavafx.controllers;
 
 import com.charleseduardo.donation.donationsjavafx.utils.ScreenManager;
+import com.charleseduardo.donation.donationsjavafx.utils.SessionManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -38,6 +39,7 @@ public class HomeController {
 
     @FXML
     private void handleLogoutButton() {
+        SessionManager.logout();
         ScreenManager.redirectTo("login.fxml");
     }
 }

@@ -5,6 +5,7 @@ import com.charleseduardo.donation.donationsjavafx.dao.UserDAO;
 import com.charleseduardo.donation.donationsjavafx.models.User;
 import com.charleseduardo.donation.donationsjavafx.services.UserService;
 import com.charleseduardo.donation.donationsjavafx.utils.ScreenManager;
+import com.charleseduardo.donation.donationsjavafx.utils.SessionManager;
 import com.charleseduardo.donation.donationsjavafx.utils.ToolBox;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -44,6 +45,7 @@ public class LoginController {
         User user = userService.getUserByEmail(email);
 
         if (user != null && user.getPassword().equals(password)) {
+            SessionManager.setLoggedInUser(user);
             toolBox.showAlert("Success", "Login successful! Redirecting...", Alert.AlertType.INFORMATION);
             ScreenManager.redirectTo("home.fxml");
         } else {
