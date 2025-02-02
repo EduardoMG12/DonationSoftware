@@ -34,6 +34,6 @@
    </VBox>
    <HBox alignment="BOTTOM_CENTER" layoutX="3.0" layoutY="500.0" prefHeight="100.0" prefWidth="200.0" styleClass="VBoxCentralizeWrapper" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="500.0">
       <children>
-            <Button fx:id="donateButton" mnemonicParsing="false" onAction="#handleDonateButton" styleClass="VBoxCentralizeWrapper" text="Donate" />
+            <Button fx:id="donateButton" mnemonicParsing="false" onAction="#handleDonateButton" style="-fx-background-color: #3674B5;" styleClass="VBoxCentralizeWrapper" text="Donate" />
       </children></HBox>
 </AnchorPane>

@@ -1,14 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.charleseduardo.donation.donationsjavafx.views.Dontaion"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.charleseduardo.donation.donationsjavafx.views.Dontaion">
+   <children>
+      <AnchorPane prefHeight="82.0" prefWidth="1920.0" style="-fx-background-color: #5CB338;">
+         <children>
+            <ImageView fitHeight="52.0" fitWidth="79.0" layoutX="27.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imgs/DALL_E-2025-01-29-14.01.08-A-modern-and-minimalistic-logo-for-a-donation-software-removebg-preview.png" />
+               </image></ImageView>
+            <Label layoutX="87.0" layoutY="28.0" prefHeight="27.0" prefWidth="121.0" text="Donation Page" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="1824.0" layoutY="29.0" mnemonicParsing="false" styleClass="buttonRed" text="Logout" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0" />
+         </children></AnchorPane>
+      <Label layoutX="744.0" layoutY="322.0" text="Value to donate">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField layoutX="792.0" layoutY="378.0" prefHeight="25.0" prefWidth="336.0" />
+      <Label layoutX="869.0" layoutY="492.0" text="Payment method">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="665.0" layoutY="633.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="79.0">
+         <graphic>
+            <ImageView fitHeight="52.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imgs/pix.png" />
+               </image></ImageView>
+         </graphic>
+      </Button>
+      <Label layoutX="700.0" layoutY="707.0" text="PIX">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="781.0" layoutY="634.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="79.0">
+         <graphic>
+            <ImageView fitHeight="52.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imgs/creditCard.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label layoutX="785.0" layoutY="707.0" text="Credit card">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="894.0" layoutY="634.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="79.0">
+         <graphic>
+            <ImageView fitHeight="52.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imgs/fetlock.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label layoutX="913.0" layoutY="707.0" text="Fetlock">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="1009.0" layoutY="633.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="79.0">
+         <graphic>
+            <ImageView fitHeight="52.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imgs/paypal.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label layoutX="1025.0" layoutY="707.0" text="Paypal">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="1128.0" layoutY="633.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="79.0">
+         <graphic>
+            <ImageView fitHeight="52.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imgs/TED.jpg" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label layoutX="1143.0" layoutY="707.0" text="Transfer">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="905.0" layoutY="901.0" mnemonicParsing="false" style="-fx-background-color: #3674B5;" text="Donate" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button layoutX="69.0" layoutY="113.0" mnemonicParsing="false" style="-fx-background-color: #5CB338;" text="Back" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+   </children>
 </AnchorPane>
