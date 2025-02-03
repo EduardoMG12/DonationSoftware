@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="1080.0" prefWidth="1920.0" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.charleseduardo.donation.donationsjavafx.views.Dontaion">
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.charleseduardo.donation.donationsjavafx.controllers.DonationController">
    <children>
       <AnchorPane prefHeight="82.0" prefWidth="1920.0" style="-fx-background-color: #5CB338;">
          <children>
@@ -25,13 +25,13 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField layoutX="792.0" layoutY="378.0" prefHeight="25.0" prefWidth="336.0" />
+      <TextField fx:id="amountField" layoutX="792.0" layoutY="378.0" prefHeight="25.0" prefWidth="336.0" />
       <Label layoutX="869.0" layoutY="492.0" text="Payment method">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Button layoutX="665.0" layoutY="633.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="79.0">
+      <Button fx:id="PIX" layoutX="665.0" layoutY="633.0" mnemonicParsing="false" onAction="#handlePaymentMethodSelection" prefHeight="52.0" prefWidth="79.0">
          <graphic>
             <ImageView fitHeight="52.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -44,9 +44,9 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button layoutX="781.0" layoutY="634.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="79.0">
+      <Button fx:id="CreditCard" layoutX="781.0" layoutY="634.0" mnemonicParsing="false" onAction="#handlePaymentMethodSelection" prefHeight="52.0" prefWidth="79.0">
          <graphic>
-            <ImageView fitHeight="52.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="52.0" fitWidth="79.0" onDragDetected="#handlePaymentMethodSelection" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@imgs/creditCard.png" />
                </image>
@@ -58,7 +58,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button layoutX="894.0" layoutY="634.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="79.0">
+      <Button fx:id="Fetlock" layoutX="894.0" layoutY="634.0" mnemonicParsing="false" onAction="#handlePaymentMethodSelection" prefHeight="52.0" prefWidth="79.0">
          <graphic>
             <ImageView fitHeight="52.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -72,7 +72,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button layoutX="1009.0" layoutY="633.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="79.0">
+      <Button fx:id="Paypal" layoutX="1009.0" layoutY="633.0" mnemonicParsing="false" onAction="#handlePaymentMethodSelection" prefHeight="52.0" prefWidth="79.0">
          <graphic>
             <ImageView fitHeight="52.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -86,7 +86,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button layoutX="1128.0" layoutY="633.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="79.0">
+      <Button fx:id="BankTransfer" layoutX="1128.0" layoutY="633.0" mnemonicParsing="false" onAction="#handlePaymentMethodSelection" prefHeight="52.0" prefWidth="79.0">
          <graphic>
             <ImageView fitHeight="52.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -100,12 +100,12 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button layoutX="905.0" layoutY="901.0" mnemonicParsing="false" style="-fx-background-color: #3674B5;" text="Donate" textFill="WHITE">
+      <Button fx:id="donateButton" layoutX="905.0" layoutY="901.0" mnemonicParsing="false" onAction="#handleDonate" style="-fx-background-color: #3674B5;" text="Donate" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button layoutX="69.0" layoutY="113.0" mnemonicParsing="false" style="-fx-background-color: #5CB338;" text="Back" textFill="WHITE">
+      <Button fx:id="backButton" layoutX="69.0" layoutY="113.0" mnemonicParsing="false" onAction="#handleBackButton" style="-fx-background-color: #5CB338;" text="Back" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
