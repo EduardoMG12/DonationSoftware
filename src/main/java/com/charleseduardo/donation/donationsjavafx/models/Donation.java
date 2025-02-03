@@ -9,7 +9,7 @@ public class Donation {
     private int paymentMethodId;
     private LocalDateTime donationDate;
 
-    public Donation() {
+    public Donation(int userId, int paymentMethodId, double amount) {
 
     }
 
