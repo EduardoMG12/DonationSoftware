@@ -1,6 +1,7 @@
 package com.charleseduardo.donation.donationsjavafx.dao;
 
 import com.charleseduardo.donation.donationsjavafx.models.Donation;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +26,6 @@ public class DonationDAO {
                 throw new SQLException("Failed to insert donation, no rows affected.");
             }
 
-            // Obtém o ID gerado automaticamente
             try (ResultSet generatedKeys = stmt.getGeneratedKeys()) {
                 if (generatedKeys.next()) {
                     donation.setId(generatedKeys.getInt(1));
@@ -36,24 +36,39 @@ public class DonationDAO {
         }
     }
 
-    public List<Donation> getAllDonations() throws SQLException {
+    public List<Donation> getAllDonations(int userId) throws SQLException {
         List<Donation> donations = new ArrayList<>();
-        String sql = "SELECT * FROM donations";
+        String sql = "SELECT * FROM donations WHERE user_id = ?";
 
-        try (PreparedStatement stmt = connection.prepareStatement(sql);
-             ResultSet rs = stmt.executeQuery()) {
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setInt(1, userId);
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    Donation donation = new Donation(
+                            rs.getInt("user_id"),
+                            rs.getInt("payment_method_id"),
+                            rs.getDouble("amount")
+                    );
+                    donation.setId(rs.getInt("id"));
+                    donation.setDonationDate(rs.getTimestamp("donation_date").toLocalDateTime());
 
-            while (rs.next()) {
-                Donation donation = new Donation();
-                donation.setId(rs.getInt("id"));
-                donation.setUserId(rs.getInt("user_id"));
-                donation.setAmount(rs.getDouble("amount"));
-                donation.setPaymentMethodId(rs.getInt("payment_method_id"));
-                donation.setDonationDate(rs.getTimestamp("donation_date").toLocalDateTime());
-
-                donations.add(donation);
+                    donations.add(donation);
+                }
             }
         }
         return donations;
+    }
+
+    public int getPaymentMethodIdByName(String methodName) throws SQLException {
+        String sql = "SELECT id FROM payment_methods WHERE name = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setString(1, methodName);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getInt("id");
+                }
+            }
+        }
+        return -1;
     }
 }
