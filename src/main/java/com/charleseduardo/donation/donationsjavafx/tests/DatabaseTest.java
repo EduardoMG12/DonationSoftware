@@ -15,21 +15,19 @@ public class DatabaseTest {
         String password = "password";
 
         try (Connection connection = DriverManager.getConnection(url, user, password)) {
-            System.out.println("Conexão bem-sucedida!");
+            System.out.println("success connection!");
 
-            // Testar o DAO
             UserDAO userDAO = new UserDAO(connection);
             List<User> users = userDAO.getAllUsers();
 
-            // Exibir os usuários recuperados
-            System.out.println("Usuários encontrados:");
+            System.out.println("find user:");
             for (User userObj : users) {
                 System.out.println("ID: " + userObj.getId() +
-                        ", Nome: " + userObj.getFullName() +
+                        ", Name: " + userObj.getFullName() +
                         ", Email: " + userObj.getEmail());
             }
         } catch (SQLException e) {
-            System.err.println("Erro ao conectar ao banco ou executar a consulta:");
+            System.err.println("Error to connect database or execute query:");
             e.printStackTrace();
         }
     }
