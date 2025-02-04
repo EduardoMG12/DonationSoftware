@@ -1,6 +1,7 @@
 package com.charleseduardo.donation.donationsjavafx.dao;
 
 import com.charleseduardo.donation.donationsjavafx.models.Donation;
+import com.charleseduardo.donation.donationsjavafx.utils.ScreenManager;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -30,6 +31,7 @@ public class DonationDAO {
             try (ResultSet generatedKeys = stmt.getGeneratedKeys()) {
                 if (generatedKeys.next()) {
                     donation.setId(generatedKeys.getInt(1));
+                    ScreenManager.redirectTo("home.fxml");
                 } else {
                     throw new SQLException("Failed to retrieve donation ID.");
                 }

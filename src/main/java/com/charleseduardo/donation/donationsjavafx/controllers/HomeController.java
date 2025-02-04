@@ -43,3 +43,6 @@ public class HomeController {
         ScreenManager.redirectTo("login.fxml");
     }
 }
+
+// only remember
+// just missing end this archive implement method findAllDonations and serch about responsivity on javaFXr
