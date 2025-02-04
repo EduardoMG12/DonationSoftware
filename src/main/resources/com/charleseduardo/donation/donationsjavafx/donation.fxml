@@ -18,7 +18,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button layoutX="1824.0" layoutY="29.0" mnemonicParsing="false" styleClass="buttonRed" text="Logout" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0" />
+            <Button layoutX="1824.0" layoutY="29.0" mnemonicParsing="false" onAction="#handleLogoutButton" styleClass="buttonRed" text="Logout" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0" />
          </children></AnchorPane>
       <Label layoutX="744.0" layoutY="322.0" text="Value to donate">
          <font>

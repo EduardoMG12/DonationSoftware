@@ -110,7 +110,10 @@ public class DonationController {
     private void handleBackButton() {
         ScreenManager.redirectTo("home.fxml");
     }
-}
 
-// only remember
-// just missing end this archive and implement method findAllDonations in home and serch about responsivity on javaFXr
+    @FXML
+    private void handleLogoutButton() {
+        SessionManager.logout();
+        ScreenManager.redirectTo("login.fxml");
+    }
+}
