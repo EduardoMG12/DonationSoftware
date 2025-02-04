@@ -10,7 +10,9 @@ public class Donation {
     private LocalDateTime donationDate;
 
     public Donation(int userId, int paymentMethodId, double amount) {
-
+        this.userId = userId;
+        this.paymentMethodId = paymentMethodId;
+        this.amount = amount;
     }
 
     public int getId() {
