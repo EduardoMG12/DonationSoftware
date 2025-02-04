@@ -45,7 +45,7 @@ public class DonationController {
     public void handlePaymentMethodSelection(ActionEvent event) {
         Button clickedButton = (Button) event.getSource();
         String methodName = clickedButton.getId();
-        System.out.println(methodName);
+
         try {
             int methodId = donationDAO.getPaymentMethodIdByName(methodName);
             if (methodId != -1) {
@@ -63,6 +63,7 @@ public class DonationController {
     private void handleDonate() {
         try {
             int userId = SessionManager.getUserId();
+
             if (userId == -1) {
                 toolBox.showAlert("Error", "You need to log in to donate.", Alert.AlertType.ERROR);
                 return;
@@ -73,13 +74,11 @@ public class DonationController {
                 toolBox.showAlert("Error", "Please enter a valid numeric amount.", Alert.AlertType.ERROR);
                 return;
             }
-            System.out.println(amountText);
 
             double amount;
 
             try{
                 amount = Double.parseDouble(amountText);
-                System.out.println(amount);
             } catch (NumberFormatException e) {
                 toolBox.showAlert("Error", "Invalid amount. Please enter a valid number.", Alert.AlertType.ERROR);
                 return;

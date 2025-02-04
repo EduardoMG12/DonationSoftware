@@ -15,6 +15,7 @@ public class DonationDAO {
 
     public void addDonation(Donation donation) throws SQLException {
         String sql = "INSERT INTO donations (user_id, amount, payment_method_id, donation_date) VALUES (?, ?, ?, ?)";
+
         try (PreparedStatement stmt = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             stmt.setInt(1, donation.getUserId());
             stmt.setDouble(2, donation.getAmount());
