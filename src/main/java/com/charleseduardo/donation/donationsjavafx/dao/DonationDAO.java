@@ -39,28 +39,32 @@ public class DonationDAO {
         }
     }
 
-    public List<Donation> getAllDonations(int userId) throws SQLException {
+    public List<Donation> findAllDonations() throws SQLException {
         List<Donation> donations = new ArrayList<>();
-        String sql = "SELECT * FROM donations WHERE user_id = ?";
+        String sql = "SELECT d.*, u.full_name FROM donations d " +
+                "JOIN users u ON d.user_id = u.id " +
+                "ORDER BY d.amount DESC";
 
-        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
-            stmt.setInt(1, userId);
-            try (ResultSet rs = stmt.executeQuery()) {
-                while (rs.next()) {
-                    Donation donation = new Donation(
-                            rs.getInt("user_id"),
-                            rs.getInt("payment_method_id"),
-                            rs.getDouble("amount")
-                    );
-                    donation.setId(rs.getInt("id"));
-                    donation.setDonationDate(rs.getTimestamp("donation_date").toLocalDateTime());
+        try (PreparedStatement stmt = connection.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
 
-                    donations.add(donation);
-                }
+            while (rs.next()) {
+                Donation donation = new Donation(
+                        rs.getInt("user_id"),
+                        rs.getInt("payment_method_id"),
+                        rs.getDouble("amount"),
+                        rs.getString("full_name")
+                );
+                donation.setId(rs.getInt("id"));
+                donation.setDonationDate(rs.getTimestamp("donation_date").toLocalDateTime());
+
+                donations.add(donation);
             }
         }
         return donations;
     }
+
+
 
     public int getPaymentMethodIdByName(String methodName) throws SQLException {
         String sql = "SELECT id FROM payment_methods WHERE name = ?";
