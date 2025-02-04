@@ -8,17 +8,17 @@
 <AnchorPane prefHeight="1080.0" prefWidth="1920.0" styleClass="home" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.charleseduardo.donation.donationsjavafx.controllers.HomeController">
    <AnchorPane prefHeight="82.0" prefWidth="1920.0" style="-fx-background-color: #5CB338;">
       <children>
-         <ImageView fitHeight="52.0" fitWidth="79.0" layoutX="27.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-               <Image url="@imgs/DALL_E-2025-01-29-14.01.08-A-modern-and-minimalistic-logo-for-a-donation-software-removebg-preview.png" />
-            </image></ImageView>
+          <Button mnemonicParsing="false" onAction="#handleLogoutButton" prefHeight="49.0" prefWidth="96.0" styleClass="buttonRed" text="Logout" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="15.0" />
          <Label layoutX="87.0" layoutY="28.0" text="Home Donation" textFill="WHITE">
             <font>
                <Font size="18.0" />
             </font></Label>
-          <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#handleLogoutButton" prefHeight="49.0" prefWidth="96.0" styleClass="buttonRed" text="Logout" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="15.0" />
+         <ImageView fitHeight="52.0" fitWidth="79.0" layoutX="27.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@imgs/DALL_E-2025-01-29-14.01.08-A-modern-and-minimalistic-logo-for-a-donation-software-removebg-preview.png" />
+            </image></ImageView>
       </children></AnchorPane>
-   <VBox alignment="CENTER" prefHeight="600.0" prefWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+   <VBox alignment="CENTER" layoutY="81.0" prefHeight="999.0" prefWidth="1920.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="81.0">
       <children>
          <HBox alignment="CENTER" prefHeight="311.0" prefWidth="1024.0" styleClass="VBoxCentralizeWrapper">
             <children>

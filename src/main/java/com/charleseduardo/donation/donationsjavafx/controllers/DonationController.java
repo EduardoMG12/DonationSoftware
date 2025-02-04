@@ -27,8 +27,10 @@ public class DonationController {
     private Button backButton;
 
     private final DonationService donationService;
-    private final ToolBox toolBox = new ToolBox();
     private final DonationDAO donationDAO;
+
+    private final ToolBox toolBox = new ToolBox();
+
     private int paymentMethodId = -1;
 
     public DonationController() {

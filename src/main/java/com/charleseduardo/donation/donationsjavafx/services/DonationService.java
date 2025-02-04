@@ -7,6 +7,7 @@ import com.charleseduardo.donation.donationsjavafx.models.Donation;
 
 import java.sql.SQLException;
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class DonationService {
     private DonationDAO donationDAO;
@@ -25,5 +26,9 @@ public class DonationService {
         }
 
         donationDAO.addDonation(donation);
+    }
+
+    public List<Donation> getAllDonations() throws SQLException {
+        return donationDAO.findAllDonations();
     }
 }
