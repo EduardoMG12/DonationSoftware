@@ -1,9 +1,15 @@
 package com.charleseduardo.donation.donationsjavafx.models;
 
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 import java.time.LocalDateTime;
 
 public class Donation {
     private int id;
+    private String userName;
     private int userId;
     private double amount;
     private int paymentMethodId;
@@ -13,6 +19,34 @@ public class Donation {
         this.userId = userId;
         this.paymentMethodId = paymentMethodId;
         this.amount = amount;
+    }
+
+    public Donation(int userId, int paymentMethodId, double amount, String userName) {
+        this.userId = userId;
+        this.paymentMethodId = paymentMethodId;
+        this.amount = amount;
+        this.userName = userName;
+        this.userNameProperty = new SimpleStringProperty(userName);
+        this.amountProperty = new SimpleDoubleProperty(amount);
+    }
+
+    private StringProperty userNameProperty;
+    private DoubleProperty amountProperty;
+
+    public StringProperty getUserNameProperty() {
+        return userNameProperty;
+    }
+
+    public DoubleProperty getAmountProperty() {
+        return amountProperty;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public int getId() {
