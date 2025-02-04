@@ -16,18 +16,12 @@ public class DonationService {
     }
 
     public void addDonation(Donation donation) throws SQLException {
-
         if (donation.getAmount() <= 0) {
             throw new IllegalArgumentException("Donation amount must be greater than zero.");
         }
 
-        PaymentMethodDAO paymentMethodDAO = new PaymentMethodDAO(DatabaseConnection.getConnection());
-        if (donation.getPaymentMethodId() < 0 || !paymentMethodDAO.paymentMethodExists(donation.getPaymentMethodId())) {
-            throw new IllegalArgumentException("Invalid payment method.");
-        }
-
-        if (donation.getDonationDate() != null && donation.getDonationDate().isAfter(LocalDateTime.now())) {
-            throw new IllegalArgumentException("Donation date cannot be in the future.");
+        if (donation.getDonationDate() == null) {
+            donation.setDonationDate(LocalDateTime.now());
         }
 
         donationDAO.addDonation(donation);
