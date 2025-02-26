@@ -6,8 +6,6 @@ Welcome to **Donations JavaFX**, a university project for the *Programming of Co
 
 ---
 
-
-
 ## 🌍 Languages
 
 <details>
@@ -15,8 +13,9 @@ Welcome to **Donations JavaFX**, a university project for the *Programming of Co
    <details>
      <summary style="position:relative; font-size: 1.5rem; font-weight: bold;">🛠️ Requirements</summary>
    
-   - Docker & Docker Compose installed
-     - Java 17+
+     - Docker & Docker Compose installed
+     - Maven
+     - Java 21
      - MySQL Database
 
    </details>
@@ -40,10 +39,15 @@ Welcome to **Donations JavaFX**, a university project for the *Programming of Co
    ```sh
    sudo docker ps -a
    ```
-5. Stop a specific container:
+5. Active lib, go /lib/mysql-connector-j-9.2.0.jar click with right button and active the library:
+
+6. Running project
+
+7. Stop a specific container:
    ```sh
    sudo docker stop <container_id>
    ```
+
 </details>
 
 <details>
@@ -64,6 +68,60 @@ Welcome to **Donations JavaFX**, a university project for the *Programming of Co
 
   <details>
   <summary style="position:relative; font-size: 2rem; font-weight: bold;"> PT-BR<img width="70" alt="Descrição da imagem" style="position: absolute; top: 50%; left: 180px; transform: translate(-50%, -50%);" src="https://www.svgrepo.com/show/405433/flag-for-flag-brazil.svg"></summary>
+
+
+<details>
+     <summary style="position:relative; font-size: 1.5rem; font-weight: bold;">🛠️ Requisitos</summary>
+   
+     - Docker & Docker Compose installed
+     - Maven
+     - Java 21
+     - MySQL Database
+
+   </details>
+
+<details>
+  <summary style="position:relative; font-size: 1.5rem; font-weight: bold;">🚀 Como rodar o projeto</summary>
+
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-repo-link.git
+   ```
+2. Navegue até o diretorio do projeto:
+   ```sh
+   cd donation-software
+   ```
+3. Inicie os containers:
+   ```sh
+   sudo docker-compose up -d
+   ```
+4. Verifique se os containers estão rodando:
+   ```sh
+   sudo docker ps -a
+   ```
+5. Ative a bibilhoteca indo em /lib/mysql-connector-j-9.2.0.jar clique com o botao direito do mouse e instale a dependencie do mysql-conector
+6. Execute o projeto
+7. Pare um container específico se precisar:
+   ```sh
+   sudo docker stop <container_id>
+   ```
+</details>
+
+<details>
+  <summary style="position:relative; font-size: 1.5rem; font-weight: bold;">🎯 Sobre o projeto</summary>
+
+### 🎯 Objetivos
+- Desenvolver um sistema de gerenciamento de doações
+- Permitir que os usuários se registrem e efetuem login
+- Implementar doações
+
+### ⛔ Desafios
+- Implementar authentication
+- Conectar JavaFX com o MySQL
+- Melhorar UI/UX
+
+</details>
+
   </details>
 
 ---
@@ -75,8 +133,8 @@ Welcome to **Donations JavaFX**, a university project for the *Programming of Co
 ---
 
 ## 📬 Contact / Contato
-📧 Email: [your.email@example.com](mailto:your.email@example.com)  
-🔗 LinkedIn: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
+📧 Email: [charleshdeveloper@gmail.com](mailto:charleshdeveloper@gmail.com)  
+🔗 LinkedIn: [linkedin.com/in/EduardoMG12](https://linkedin.com/in/EduardoMG12)
 
 ---
 
